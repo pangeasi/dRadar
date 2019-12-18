@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import { Layout } from "../components/UI/Layout";
-import { IonButton, IonInput } from "@ionic/react";
+import { IonButton, IonInput, IonItem, IonLabel } from "@ionic/react";
 
 const HomePage: React.FC = () => {
   const [input, setInput] = useState("");
@@ -17,8 +17,16 @@ const HomePage: React.FC = () => {
   return (
     <Layout title="Home">
       <div>
-        <IonInput onIonChange={e => setInput(e.detail.value || "")} />
+        <IonItem>
+          <IonLabel position="floating">Set a user</IonLabel>
+          <IonInput
+            placeholder="User"
+            value={input}
+            onIonChange={e => setInput(e.detail.value || "")}
+          />
+        </IonItem>
         <IonButton
+          disabled={!input}
           onClick={() => {
             input && create({ user: input });
             setInput("");
