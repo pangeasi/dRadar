@@ -1,23 +1,24 @@
-import { IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { americanFootball, basketball, beer, bluetooth, boat, build, flask, football, paperPlane, wifi } from 'ionicons/icons';
-import React from 'react';
+import { IonIcon, IonItem, IonList } from "@ionic/react";
+import {
+  americanFootball,
+  basketball,
+  beer,
+  bluetooth,
+  boat,
+  build,
+  flask,
+  football,
+  paperPlane,
+  wifi
+} from "ionicons/icons";
+import React from "react";
+import { Layout } from "../components/UI/Layout";
 
 const ListPage: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>List</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
-      <IonContent>
-        <ListItems />
-      </IonContent>
-    </IonPage>
+    <Layout title="List">
+      <ListItems />
+    </Layout>
   );
 };
 
