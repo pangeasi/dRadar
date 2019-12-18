@@ -12,6 +12,7 @@
     "@types/react-router": "^5.1.1",
     "@types/react-router-dom": "^5.1.0",
     "blockstack": "^19.3.0",
+    "faunadb": "^2.10.1",
     "ionicons": "^4.6.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
