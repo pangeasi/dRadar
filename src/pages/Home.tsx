@@ -10,14 +10,14 @@ import {
   IonList,
   IonText
 } from "@ionic/react";
-import { getLambda } from "../hooks/lambda";
+import { getLambda } from "../utils/lambda";
 
 const HomePage: React.FC = () => {
   const [input, setInput] = useState("");
   const [dataSearch, setDataSearch] = useState([]);
 
   const create = (data: any) => {
-    return fetch(getLambda("/.netlify/functions/add-user"), {
+    return fetch(getLambda("add-user"), {
       body: JSON.stringify(data),
       method: "POST"
     }).then(response => {
