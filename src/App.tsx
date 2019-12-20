@@ -27,6 +27,8 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Detail from "./pages/Detail";
+import NotFoundPage from "./pages/404";
 
 const appPages: AppPage[] = [
   {
@@ -47,8 +49,10 @@ const App: React.FC = () => (
       <IonSplitPane contentId="main">
         <Menu appPages={appPages} />
         <IonRouterOutlet id="main">
+          <Route path="*" component={NotFoundPage} />
           <Route path="/" component={Home} exact={true} />
           <Route path="/list" component={List} exact={true} />
+          <Route path="/detail/:mediaType/:id" component={Detail} />
         </IonRouterOutlet>
       </IonSplitPane>
     </IonReactRouter>
